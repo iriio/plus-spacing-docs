@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+  output: process.env.NODE_ENV === "production" ? "export" : undefined,
   trailingSlash: true,
   images: {
     unoptimized: true,
   },
-  basePath: "/plus-spacing-docs",
+  basePath: process.env.NODE_ENV === "production" ? "/plus-spacing-docs" : "",
 };
 
 module.exports = nextConfig;

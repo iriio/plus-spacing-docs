@@ -59,7 +59,7 @@ const data = {
           url: "/dashboard/implementation#decision-tree",
         },
         {
-          title: "Implementation Guidelines",
+          title: "Implementation",
           url: "/dashboard/implementation#guidelines",
         },
         {
