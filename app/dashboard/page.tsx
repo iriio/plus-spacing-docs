@@ -11,6 +11,7 @@ import {
 import Image from "next/image";
 import { getImagePath } from "@/lib/utils";
 import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export default function Page() {
   return (
@@ -246,6 +247,262 @@ export default function Page() {
             </TableRow>
           </TableBody>
         </Table>
+      </section>
+
+      <section id="escalation" className="mt-16">
+        <h2 className="text-2xl font-medium tracking-tight mb-6">
+          When to Ask for Help
+        </h2>
+
+        <p className="text-base leading-relaxed mb-8">
+          Sometimes you'll run into something that doesn't fit any of our
+          existing patterns. Here's when you should reach out to the design
+          system team and what to include.
+        </p>
+
+        <h3 className="text-xl font-medium tracking-tight mb-4">
+          These Things Definitely Need Review
+        </h3>
+        <Table className="mb-8">
+          <TableHeader>
+            <TableRow>
+              <TableHead>Situation</TableHead>
+              <TableHead>How Urgent</TableHead>
+              <TableHead>Why We Need to Know</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell className="font-medium">
+                You Need This Pattern Everywhere
+              </TableCell>
+              <TableCell>
+                <Badge variant="default" className="text-xs">
+                  high
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                If you're going to use this spacing in lots of places, we should
+                probably make it official
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell className="font-medium">
+                Nothing We Have Works
+              </TableCell>
+              <TableCell>
+                <Badge variant="default" className="text-xs">
+                  high
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                You've tried all our templates and none of them solve your
+                problem
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell className="font-medium">
+                Accessibility Issues
+              </TableCell>
+              <TableCell>
+                <Badge variant="destructive" className="text-xs">
+                  critical
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                You can't make something accessible with our current tokens
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell className="font-medium">
+                Rules Don't Make Sense
+              </TableCell>
+              <TableCell>
+                <Badge variant="secondary" className="text-xs">
+                  medium
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                Following our guidelines would make the user experience worse
+              </TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+
+        <h3 className="text-xl font-medium tracking-tight mb-4">
+          What to Tell Us
+        </h3>
+        <Table className="mb-8">
+          <TableHeader>
+            <TableRow>
+              <TableHead>✓</TableHead>
+              <TableHead>What We Need</TableHead>
+              <TableHead>How Important</TableHead>
+              <TableHead>Why This Helps</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell>
+                <input
+                  type="checkbox"
+                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+              </TableCell>
+              <TableCell className="font-medium">
+                What component and where you're using it
+              </TableCell>
+              <TableCell>
+                <Badge variant="outline" className="text-xs">
+                  must have
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                We need to understand the context to give good advice
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <input
+                  type="checkbox"
+                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+              </TableCell>
+              <TableCell className="font-medium">
+                What you're trying to accomplish
+              </TableCell>
+              <TableCell>
+                <Badge variant="outline" className="text-xs">
+                  must have
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                Tell us what user need you're trying to solve
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <input
+                  type="checkbox"
+                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+              </TableCell>
+              <TableCell className="font-medium">
+                What tokens you want to use and why
+              </TableCell>
+              <TableCell>
+                <Badge variant="outline" className="text-xs">
+                  must have
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                Show us your thinking so we can build on it
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <input
+                  type="checkbox"
+                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+              </TableCell>
+              <TableCell className="font-medium">
+                How this might affect other things
+              </TableCell>
+              <TableCell>
+                <Badge variant="outline" className="text-xs">
+                  must have
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                Help us spot any unintended consequences
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <input
+                  type="checkbox"
+                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+              </TableCell>
+              <TableCell className="font-medium">
+                Any user research or testing
+              </TableCell>
+              <TableCell>
+                <Badge variant="outline" className="text-xs">
+                  nice to have
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                Evidence that users actually need this change
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <input
+                  type="checkbox"
+                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+              </TableCell>
+              <TableCell className="font-medium">
+                Accessibility testing results
+              </TableCell>
+              <TableCell>
+                <Badge variant="outline" className="text-xs">
+                  nice to have
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                Results from accessibility testing that justify the approach
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <input
+                  type="checkbox"
+                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+              </TableCell>
+              <TableCell className="font-medium">
+                Comparative analysis with similar patterns
+              </TableCell>
+              <TableCell>
+                <Badge variant="outline" className="text-xs">
+                  supporting
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                How similar components or patterns handle comparable
+                requirements
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <input
+                  type="checkbox"
+                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+              </TableCell>
+              <TableCell className="font-medium">
+                Implementation feasibility assessment
+              </TableCell>
+              <TableCell>
+                <Badge variant="outline" className="text-xs">
+                  supporting
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                Technical evaluation of the proposed implementation approach
+              </TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+
+        <Callout type="warning" title="Escalation Timeline">
+          Escalations should be resolved within 2-3 business days. Critical
+          accessibility issues take priority and may require immediate attention
+          from the design system team.
+        </Callout>
       </section>
     </PageLayout>
   );

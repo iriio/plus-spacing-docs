@@ -37,6 +37,10 @@ const data = {
           title: "Cross-Semantic",
           url: "/dashboard#authorization",
         },
+        {
+          title: "When to Ask for Help",
+          url: "/dashboard#escalation",
+        },
       ],
     },
     {
@@ -74,15 +78,13 @@ const data = {
     //   ],
     // },
     {
-      title: "Advanced",
+      title: "Page Layout",
       items: [
-        { title: "Responsive Patterns", url: "/dashboard/advanced#responsive" },
+        { title: "Large Tokens", url: "/dashboard/advanced#large-tokens" },
         {
-          title: "Accessibility Overrides",
-          url: "/dashboard/advanced#accessibility",
+          title: "Layout Patterns",
+          url: "/dashboard/advanced#layout-patterns",
         },
-        { title: "Escalation Process", url: "/dashboard/advanced#escalation" },
-        { title: "Success Metrics", url: "/dashboard/advanced#metrics" },
       ],
     },
   ],

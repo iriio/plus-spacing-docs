@@ -18,8 +18,8 @@ export default function Page() {
       title="Component Family Templates"
     >
       <p className="text-base text-gray-600 mb-8 leading-relaxed">
-        Pre-approved cross-semantic token patterns for common component
-        families, with documented rationale and usage guidelines.
+        Ready-made spacing patterns for common components. We've already figured
+        out the tricky parts, so you don't have to.
       </p>
 
       <section id="button-family" className="mt-12">
@@ -28,7 +28,7 @@ export default function Page() {
             Button Family
           </h2>
           <p className="text-sm text-gray-600">
-            similar components: pagination, input fields
+            works for: pagination, input fields, and similar clickable things
           </p>
         </div>
         <div className="mb-8">
@@ -45,9 +45,9 @@ export default function Page() {
           <TableHeader>
             <TableRow>
               <TableHead>Button Size</TableHead>
-              <TableHead>Token Property</TableHead>
-              <TableHead>Token Value</TableHead>
-              <TableHead>Semantic Category</TableHead>
+              <TableHead>What Part</TableHead>
+              <TableHead>Token</TableHead>
+              <TableHead>Size Category</TableHead>
               <TableHead>Type</TableHead>
             </TableRow>
           </TableHeader>
@@ -56,7 +56,7 @@ export default function Page() {
               <TableCell className="font-medium" rowSpan={3}>
                 Small
               </TableCell>
-              <TableCell>horizontal-padding</TableCell>
+              <TableCell>side padding</TableCell>
               <TableCell>space-100</TableCell>
               <TableCell>Small</TableCell>
               <TableCell>
@@ -76,7 +76,7 @@ export default function Page() {
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>vertical-padding</TableCell>
+              <TableCell>top/bottom padding</TableCell>
               <TableCell>space-50</TableCell>
               <TableCell>Small</TableCell>
               <TableCell>
@@ -89,7 +89,7 @@ export default function Page() {
               <TableCell className="font-medium" rowSpan={3}>
                 Medium
               </TableCell>
-              <TableCell>horizontal-padding</TableCell>
+              <TableCell>side padding</TableCell>
               <TableCell>space-150</TableCell>
               <TableCell>Small</TableCell>
               <TableCell>
@@ -109,7 +109,7 @@ export default function Page() {
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>vertical-padding</TableCell>
+              <TableCell>top/bottom padding</TableCell>
               <TableCell>space-75</TableCell>
               <TableCell>Small</TableCell>
               <TableCell>
@@ -122,7 +122,7 @@ export default function Page() {
               <TableCell className="font-medium" rowSpan={3}>
                 Large
               </TableCell>
-              <TableCell>horizontal-padding</TableCell>
+              <TableCell>side padding</TableCell>
               <TableCell>space-200</TableCell>
               <TableCell>Medium</TableCell>
               <TableCell>
@@ -142,7 +142,7 @@ export default function Page() {
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>vertical-padding</TableCell>
+              <TableCell>top/bottom padding</TableCell>
               <TableCell>space-100</TableCell>
               <TableCell>Small</TableCell>
               <TableCell>
@@ -154,10 +154,10 @@ export default function Page() {
           </TableBody>
         </Table>
 
-        <Callout type="info" title="Rationale">
-          Button accessibility requires larger horizontal spacing than Small
-          semantic size provides, while maintaining compact vertical profile for
-          layout efficiency.
+        <Callout type="info" title="Why This Works">
+          Large buttons need bigger side padding so they're easier to click, but
+          we keep the top/bottom padding small so they don't take up too much
+          vertical space.
         </Callout>
       </section>
 
