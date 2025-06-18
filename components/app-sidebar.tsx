@@ -56,23 +56,23 @@ const data = {
         },
       ],
     },
-    {
-      title: "Implementation",
-      items: [
-        {
-          title: "Decision Tree",
-          url: "/dashboard/implementation#decision-tree",
-        },
-        {
-          title: "Implementation",
-          url: "/dashboard/implementation#guidelines",
-        },
-        {
-          title: "Quality Assurance",
-          url: "/dashboard/implementation#quality",
-        },
-      ],
-    },
+    // {
+    //   title: "Implementation",
+    //   items: [
+    //     {
+    //       title: "Decision Tree",
+    //       url: "/dashboard/implementation#decision-tree",
+    //     },
+    //     {
+    //       title: "Implementation",
+    //       url: "/dashboard/implementation#guidelines",
+    //     },
+    //     {
+    //       title: "Quality Assurance",
+    //       url: "/dashboard/implementation#quality",
+    //     },
+    //   ],
+    // },
     {
       title: "Advanced",
       items: [

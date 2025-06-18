@@ -28,7 +28,7 @@ export default function Page() {
             Button Family
           </h2>
           <p className="text-sm text-gray-600">
-            Small Components - Cross-semantic Authorized
+            similar components: pagination, input fields
           </p>
         </div>
         <div className="mb-8">
@@ -39,10 +39,6 @@ export default function Page() {
             height={400}
             className="rounded border border-gray-200"
           />
-          <Callout type="info" title="Rationale">
-            For components that are similar to or should visually behave like
-            Buttons, use the following tokens:
-          </Callout>
         </div>
 
         <Table className="mb-8">
@@ -182,36 +178,202 @@ export default function Page() {
           />
         </div>
 
-        <Table className="mb-6">
+        <Table className="mb-8">
           <TableHeader>
             <TableRow>
-              <TableHead>Component Variant</TableHead>
+              <TableHead>Badge Size</TableHead>
               <TableHead>Token Property</TableHead>
               <TableHead>Token Value</TableHead>
               <TableHead>Semantic Category</TableHead>
               <TableHead>Type</TableHead>
-              <TableHead>Notes</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             <TableRow>
               <TableCell className="font-medium" rowSpan={2}>
-                All Badge & Chip Variants
+                Badge H1
               </TableCell>
-              <TableCell>padding-inline</TableCell>
-              <TableCell>space-200 to space-300</TableCell>
+              <TableCell>horizontal-padding</TableCell>
+              <TableCell>space-300</TableCell>
+              <TableCell>Medium</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>gap</TableCell>
+              <TableCell>space-400</TableCell>
+              <TableCell>Medium</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+
+            <TableRow>
+              <TableCell className="font-medium" rowSpan={2}>
+                Badge H2
+              </TableCell>
+              <TableCell>horizontal-padding</TableCell>
+              <TableCell>space-300</TableCell>
+              <TableCell>Medium</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>gap</TableCell>
+              <TableCell>space-300</TableCell>
+              <TableCell>Medium</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+
+            <TableRow>
+              <TableCell className="font-medium" rowSpan={2}>
+                Badge H3
+              </TableCell>
+              <TableCell>horizontal-padding</TableCell>
+              <TableCell>space-300</TableCell>
+              <TableCell>Medium</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>gap</TableCell>
+              <TableCell>space-300</TableCell>
+              <TableCell>Medium</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+
+            <TableRow>
+              <TableCell className="font-medium" rowSpan={2}>
+                Badge H4
+              </TableCell>
+              <TableCell>horizontal-padding</TableCell>
+              <TableCell>space-300</TableCell>
+              <TableCell>Medium</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>gap</TableCell>
+              <TableCell>space-200</TableCell>
+              <TableCell>Medium</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+
+            <TableRow>
+              <TableCell className="font-medium" rowSpan={2}>
+                Badge H5
+              </TableCell>
+              <TableCell>horizontal-padding</TableCell>
+              <TableCell>space-300</TableCell>
+              <TableCell>Medium</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>gap</TableCell>
+              <TableCell>space-150</TableCell>
+              <TableCell>Small</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+
+            <TableRow>
+              <TableCell className="font-medium" rowSpan={2}>
+                Badge H6
+              </TableCell>
+              <TableCell>horizontal-padding</TableCell>
+              <TableCell>space-300</TableCell>
               <TableCell>Medium</TableCell>
               <TableCell>
                 <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-orange-100 text-orange-800">
                   cross-semantic
                 </span>
               </TableCell>
-              <TableCell className="text-sm text-gray-600">
-                Cross-semantic authorized for text legibility
+            </TableRow>
+            <TableRow>
+              <TableCell>gap</TableCell>
+              <TableCell>space-100</TableCell>
+              <TableCell>Small</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+
+            {/* Badge B1 */}
+            <TableRow>
+              <TableCell className="font-medium" rowSpan={2}>
+                Badge B1
+              </TableCell>
+              <TableCell>horizontal-padding</TableCell>
+              <TableCell>space-200</TableCell>
+              <TableCell>Medium</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-orange-100 text-orange-800">
+                  cross-semantic
+                </span>
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>padding-block</TableCell>
+              <TableCell>gap</TableCell>
+              <TableCell>space-100</TableCell>
+              <TableCell>Small</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+
+            {/* Badge B2 */}
+            <TableRow>
+              <TableCell className="font-medium" rowSpan={2}>
+                Badge B2
+              </TableCell>
+              <TableCell>horizontal-padding</TableCell>
+              <TableCell>space-150</TableCell>
+              <TableCell>Small</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>gap</TableCell>
               <TableCell>space-75</TableCell>
               <TableCell>Small</TableCell>
               <TableCell>
@@ -219,28 +381,50 @@ export default function Page() {
                   semantic
                 </span>
               </TableCell>
-              <TableCell className="text-sm text-gray-600">
-                Semantic tokens preferred for vertical spacing
+            </TableRow>
+
+            {/* Badge B3 */}
+            <TableRow>
+              <TableCell className="font-medium" rowSpan={2}>
+                Badge B3
+              </TableCell>
+              <TableCell>horizontal-padding</TableCell>
+              <TableCell>space-100</TableCell>
+              <TableCell>Small</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>gap</TableCell>
+              <TableCell>space-50</TableCell>
+              <TableCell>Small</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
               </TableCell>
             </TableRow>
           </TableBody>
         </Table>
 
-        <Callout type="info" title="Rationale">
-          Text within badges requires sufficient horizontal breathing room for
-          readability, especially at small font sizes.
+        <Callout type="info" title="Note">
+          Badge spacing changes with font size.
         </Callout>
       </section>
 
       <section id="form-family" className="mt-16">
         <div className="mb-6">
           <h2 className="text-2xl font-medium tracking-tight mb-2">
-            Form Elements Family
+            Form & Input Family
           </h2>
-          <p className="text-sm text-gray-600">
-            Small to Medium - Contextual Authorization
-          </p>
         </div>
+        <Callout type="info" title="Note">
+          Input fields are similar to buttons, though this is listed separately
+          because vertical spacings are used here.
+        </Callout>
         <div className="mb-8">
           <Image
             src={getImagePath("/fields.png")}
@@ -254,61 +438,155 @@ export default function Page() {
         <Table className="mb-6">
           <TableHeader>
             <TableRow>
-              <TableHead>Form Element</TableHead>
+              <TableHead>Element Size</TableHead>
               <TableHead>Token Property</TableHead>
               <TableHead>Token Value</TableHead>
               <TableHead>Semantic Category</TableHead>
               <TableHead>Type</TableHead>
-              <TableHead>Notes</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
+            {/* Small Input*/}
             <TableRow>
-              <TableCell className="font-medium" rowSpan={2}>
-                Input Fields
+              <TableCell className="font-medium" rowSpan={4}>
+                Small
               </TableCell>
-              <TableCell>padding-inline</TableCell>
-              <TableCell>space-150 to space-200</TableCell>
-              <TableCell>Small to Medium</TableCell>
-              <TableCell>
-                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-orange-100 text-orange-800">
-                  cross-semantic
-                </span>
-              </TableCell>
-              <TableCell className="text-sm text-gray-600">
-                May use Medium tokens for content comfort
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>padding-block</TableCell>
-              <TableCell>space-75 to space-100</TableCell>
+              <TableCell>horizontal-padding</TableCell>
+              <TableCell>space-100</TableCell>
               <TableCell>Small</TableCell>
               <TableCell>
                 <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
                   semantic
                 </span>
               </TableCell>
-              <TableCell className="text-sm text-gray-600">
-                Semantic tokens for vertical spacing
+            </TableRow>
+            <TableRow>
+              <TableCell>horizontal-gap</TableCell>
+              <TableCell>space-100</TableCell>
+              <TableCell>Small</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>vertical-padding</TableCell>
+              <TableCell>space-50</TableCell>
+              <TableCell>Small</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>vertical-gap</TableCell>
+              <TableCell>space-50</TableCell>
+              <TableCell>Small</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+
+            {/* Medium Input*/}
+            <TableRow>
+              <TableCell className="font-medium" rowSpan={4}>
+                Medium
+              </TableCell>
+              <TableCell>horizontal-padding</TableCell>
+              <TableCell>space-150</TableCell>
+              <TableCell>Small</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>horizontal-gap</TableCell>
+              <TableCell>space-150</TableCell>
+              <TableCell>Small</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>vertical-padding</TableCell>
+              <TableCell>space-75</TableCell>
+              <TableCell>Small</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>vertical-gap</TableCell>
+              <TableCell>space-50</TableCell>
+              <TableCell>Small</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+
+            {/* Large Input*/}
+            <TableRow>
+              <TableCell className="font-medium" rowSpan={4}>
+                Large
+              </TableCell>
+              <TableCell>horizontal-padding</TableCell>
+              <TableCell>space-200</TableCell>
+              <TableCell>Medium</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-orange-100 text-orange-800">
+                  cross-semantic
+                </span>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>horizontal-gap</TableCell>
+              <TableCell>space-200</TableCell>
+              <TableCell>Medium</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-orange-100  text-orange-800">
+                  cross-semantic
+                </span>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>vertical-padding</TableCell>
+              <TableCell>space-100</TableCell>
+              <TableCell>Small</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>vertical-gap</TableCell>
+              <TableCell>space-100</TableCell>
+              <TableCell>Small</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                  semantic
+                </span>
               </TableCell>
             </TableRow>
           </TableBody>
         </Table>
-
-        <Callout type="info" title="Rationale">
-          Form inputs need adequate horizontal spacing for comfortable text
-          entry and clear visual boundaries.
-        </Callout>
       </section>
 
       <section id="modal-family" className="mt-16">
         <div className="mb-6">
-          <h2 className="text-2xl font-medium tracking-tight mb-2">
-            Modal Family
-          </h2>
-          <p className="text-sm text-gray-600">
-            Medium to Large - Context Authorization
-          </p>
+          <h2 className="text-2xl font-medium tracking-tight mb-2">Modals</h2>
         </div>
         <div className="mb-8">
           <Image
@@ -328,54 +606,35 @@ export default function Page() {
               <TableHead>Token Value</TableHead>
               <TableHead>Semantic Category</TableHead>
               <TableHead>Type</TableHead>
-              <TableHead>Context</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             <TableRow>
-              <TableCell className="font-medium" rowSpan={4}>
-                Modal Content
+              <TableCell className="font-medium" rowSpan={3}>
+                Modal Content, <br /> Modal Header, <br />
+                Modal Button Group
               </TableCell>
-              <TableCell>padding</TableCell>
-              <TableCell>space-400 to space-600</TableCell>
-              <TableCell>Medium to Large</TableCell>
-              <TableCell>
-                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
-                  semantic
-                </span>
-              </TableCell>
-              <TableCell className="text-sm text-gray-600">
-                Standard modal sizes
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>gap</TableCell>
-              <TableCell>space-300 to space-400</TableCell>
+              <TableCell>horizontal-padding</TableCell>
+              <TableCell>space-300 </TableCell>
               <TableCell>Medium</TableCell>
               <TableCell>
                 <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
                   semantic
                 </span>
               </TableCell>
-              <TableCell className="text-sm text-gray-600">
-                Content section spacing
-              </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>margin-bottom</TableCell>
-              <TableCell>space-200</TableCell>
+              <TableCell>horizontal-gap</TableCell>
+              <TableCell>space-200 or space-300</TableCell>
               <TableCell>Medium</TableCell>
               <TableCell>
                 <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
                   semantic
                 </span>
               </TableCell>
-              <TableCell className="text-sm text-gray-600">
-                Element separation
-              </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>border-radius</TableCell>
+              <TableCell>vertical-padding</TableCell>
               <TableCell>space-100</TableCell>
               <TableCell>Small</TableCell>
               <TableCell>
@@ -383,27 +642,16 @@ export default function Page() {
                   cross-semantic
                 </span>
               </TableCell>
-              <TableCell className="text-sm text-gray-600">
-                Visual consistency with system
-              </TableCell>
             </TableRow>
           </TableBody>
         </Table>
-
-        <Callout type="info" title="Context Authorization">
-          Modal spacing can use Large semantic tokens for enhanced focus and
-          readability in overlay contexts.
-        </Callout>
       </section>
 
       <section id="nav-family" className="mt-16">
         <div className="mb-6">
           <h2 className="text-2xl font-medium tracking-tight mb-2">
-            Navigation Family
+            Navigation Tabs
           </h2>
-          <p className="text-sm text-gray-600">
-            Small - Accessibility Authorization
-          </p>
         </div>
         <div className="mb-8 bg-slate-100">
           <Image
@@ -423,28 +671,34 @@ export default function Page() {
               <TableHead>Token Value</TableHead>
               <TableHead>Semantic Category</TableHead>
               <TableHead>Type</TableHead>
-              <TableHead>Notes</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             <TableRow>
-              <TableCell className="font-medium" rowSpan={2}>
-                Nav Items
+              <TableCell className="font-medium" rowSpan={3}>
+                Tabs
               </TableCell>
-              <TableCell>padding-inline</TableCell>
-              <TableCell>space-200 to space-300</TableCell>
+              <TableCell>horizontal-padding</TableCell>
+              <TableCell>space-300</TableCell>
               <TableCell>Medium</TableCell>
               <TableCell>
                 <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-orange-100 text-orange-800">
                   cross-semantic
                 </span>
               </TableCell>
-              <TableCell className="text-sm text-gray-600">
-                Cross-semantic authorized for touch targets
+            </TableRow>
+            <TableRow>
+              <TableCell>horizontal-gap</TableCell>
+              <TableCell>space-300</TableCell>
+              <TableCell>Medium</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-orange-100 text-orange-800">
+                  cross-semantic
+                </span>
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>padding-block</TableCell>
+              <TableCell>vertical-padding</TableCell>
               <TableCell>space-100</TableCell>
               <TableCell>Small</TableCell>
               <TableCell>
@@ -452,25 +706,16 @@ export default function Page() {
                   semantic
                 </span>
               </TableCell>
-              <TableCell className="text-sm text-gray-600">
-                Semantic match for compact navigation
-              </TableCell>
             </TableRow>
           </TableBody>
         </Table>
-
-        <Callout type="info" title="Rationale">
-          Navigation requires larger interaction areas for usability, while
-          maintaining compact vertical profile for layout efficiency.
-        </Callout>
       </section>
 
       <section id="alert-family" className="mt-16">
         <div className="mb-6">
           <h2 className="text-2xl font-medium tracking-tight mb-2">
-            Alert & Notification Family
+            Alerts & Notifications
           </h2>
-          <p className="text-sm text-gray-600">Medium - Semantic Match</p>
         </div>
         <div className="mb-8">
           <Image
@@ -490,15 +735,14 @@ export default function Page() {
               <TableHead>Token Value</TableHead>
               <TableHead>Semantic Category</TableHead>
               <TableHead>Type</TableHead>
-              <TableHead>Notes</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             <TableRow>
-              <TableCell className="font-medium" rowSpan={2}>
+              <TableCell className="font-medium" rowSpan={4}>
                 Alert Components
               </TableCell>
-              <TableCell>padding-inline</TableCell>
+              <TableCell>horizontal-padding</TableCell>
               <TableCell>space-300</TableCell>
               <TableCell>Medium</TableCell>
               <TableCell>
@@ -506,30 +750,39 @@ export default function Page() {
                   semantic
                 </span>
               </TableCell>
-              <TableCell className="text-sm text-gray-600">
-                Semantic match for horizontal spacing
+            </TableRow>
+            <TableRow>
+              <TableCell>horizontal-gap</TableCell>
+              <TableCell>space-100</TableCell>
+              <TableCell>Small</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-orange-100 text-orange-800">
+                  cross-semantic
+                </span>
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>padding-block</TableCell>
-              <TableCell>space-200</TableCell>
+              <TableCell>vertical-padding</TableCell>
+              <TableCell>space-300</TableCell>
               <TableCell>Medium</TableCell>
               <TableCell>
                 <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
                   semantic
                 </span>
               </TableCell>
-              <TableCell className="text-sm text-gray-600">
-                Semantic match for vertical spacing
+            </TableRow>
+            <TableRow>
+              <TableCell>vertical-gap</TableCell>
+              <TableCell>space-50</TableCell>
+              <TableCell>Small</TableCell>
+              <TableCell>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-orange-100 text-orange-800">
+                  cross-semantic
+                </span>
               </TableCell>
             </TableRow>
           </TableBody>
         </Table>
-
-        <Callout type="success" title="Rationale">
-          Alert components use semantic Medium tokens for proper prominence and
-          readability in notification contexts.
-        </Callout>
       </section>
     </PageLayout>
   );

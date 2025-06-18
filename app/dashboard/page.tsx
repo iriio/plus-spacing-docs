@@ -8,6 +8,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import Image from "next/image";
+import { getImagePath } from "@/lib/utils";
+import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 
 export default function Page() {
   return (
@@ -19,6 +22,58 @@ export default function Page() {
         These guidelines help you select the right design tokens while
         maintaining system consistency and enabling optimal user experiences.
       </Callout>
+
+      <section id="definitions" className="mt-12">
+        <h2 className="text-2xl font-medium tracking-tight mb-4">
+          What Are Semantic and Cross-Semantic Tokens?
+        </h2>
+        <div className="flex flex-col md:flex-row gap-8 items-stretch mb-6">
+          <Card className="flex-1">
+            <CardHeader>
+              <CardTitle className="text-base">Semantic Example</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-sm">
+                <strong>Badge:</strong> Uses <code>space-small</code> for
+                padding. Badges are small, so they use small space.
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="flex-1">
+            <CardHeader>
+              <CardTitle className="text-base">
+                Cross-Semantic Example
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-sm">
+                <strong>Button:</strong> Is usually small, but uses{" "}
+                <code>space-200</code> (medium space) for padding. This makes it
+                easier to tap, even though it is bigger than normal for a small
+                button.
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+        <p className="text-base leading-relaxed mb-4">
+          <strong>Semantic tokens</strong> are the sizes or colors you are
+          supposed to use for each part, like the right padding for a badge.
+        </p>
+        <p className="text-base leading-relaxed mb-4">
+          <strong>Cross-semantic token usage</strong> means using a size or
+          color in a different way than usual, because you have a special reason
+          (like making something easier to use).
+        </p>
+        <Callout type="info" className="mb-0">
+          <strong>In short:</strong> <br />
+          <span className="block mt-1">
+            Semantic = use the size or color as the system says.
+          </span>
+          <span>
+            Cross-semantic = use a different size or color for a good reason.
+          </span>
+        </Callout>
+      </section>
 
       <section id="hierarchy" className="mt-16">
         <h2 className="text-2xl font-medium tracking-tight mb-6">
@@ -123,78 +178,74 @@ export default function Page() {
 
       <section id="authorization" className="mt-16">
         <h2 className="text-2xl font-medium tracking-tight mb-6">
-          Cross-Semantic Usage Authorization
+          When is Cross-Semantic Usage Okay?
         </h2>
 
         <p className="text-base leading-relaxed mb-8">
-          Cross-semantic token usage is permitted when functional requirements
-          take precedence over semantic consistency.
+          Sometimes you need to use a different size or color than what the
+          system says. That's totally fine if you have a good reason—like making
+          something easier to use, more readable, or more accessible.
         </p>
 
         <Table className="mb-8">
           <TableHeader>
             <TableRow>
-              <TableHead>Authorization Status</TableHead>
-              <TableHead>Category</TableHead>
+              <TableHead>Is it okay?</TableHead>
+              <TableHead>Why?</TableHead>
               <TableHead>Examples</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             <TableRow>
-              <TableCell className="font-medium text-green-900" rowSpan={2}>
-                Authorized
-              </TableCell>
+              <TableCell className="font-medium">Yes</TableCell>
               <TableCell className="font-medium">
-                Accessibility Requirements
+                Accessibility or usability
               </TableCell>
               <TableCell className="text-sm text-gray-600">
-                Touch target minimums (44px × 44px), Screen reader navigation
-                needs, Color contrast ratio adjustments
+                Making buttons easier to tap, improving readability, helping
+                screen readers, etc.
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell className="font-medium">
-                Functional Requirements
-              </TableCell>
+              <TableCell className="font-medium">Yes</TableCell>
+              <TableCell className="font-medium">Functional needs</TableCell>
               <TableCell className="text-sm text-gray-600">
-                Content legibility needs, Interactive element grouping, Visual
-                hierarchy for comprehension
+                Grouping things, making layouts clearer, making forms easier to
+                use, etc.
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell className="font-medium text-red-900" rowSpan={2}>
-                Not Authorized
-              </TableCell>
+              <TableCell className="font-medium">Yes, if...</TableCell>
               <TableCell className="font-medium">
-                Aesthetic Preferences
+                Aesthetic preference, but...
               </TableCell>
               <TableCell className="text-sm text-gray-600">
-                "It looks better" without justification, Personal design
-                preferences, Arbitrary visual adjustments
+                You have a clear reason, it doesn't break consistency, and it
+                won't cause more design problems later.
               </TableCell>
             </TableRow>
             <TableRow>
+              <TableCell className="font-medium">No</TableCell>
               <TableCell className="font-medium">
-                Consistency Breaking
+                Just because "it looks better" (with no reason)
               </TableCell>
               <TableCell className="text-sm text-gray-600">
-                One-off solutions that can't be systematized, Patterns
-                conflicting with established families, Usage undermining system
-                coherence
+                Changing things for style only, if it makes the system messy or
+                inconsistent, or if it creates more work down the line.
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell className="font-medium">No</TableCell>
+              <TableCell className="font-medium">
+                Breaks consistency or creates design debt
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                One-off changes that don't fit with the rest, or that force
+                other parts to change too.
               </TableCell>
             </TableRow>
           </TableBody>
         </Table>
-
-        <Callout type="warning" title="Authorization Process" className="mt-8">
-          <ol className="list-decimal list-inside space-y-2">
-            <li>Identify the functional need clearly</li>
-            <li>Check if it falls into authorized categories</li>
-            <li>Document the justification thoroughly</li>
-            <li>Consider if the pattern can be systematized</li>
-            <li>Implement and monitor effectiveness</li>
-          </ol>
-        </Callout>
       </section>
     </PageLayout>
   );

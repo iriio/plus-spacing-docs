@@ -200,134 +200,237 @@ export default function Page() {
           escalation process to maintain system integrity.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <AlertTriangle className="w-5 h-5 text-orange-600" />
-                When to Escalate
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {[
-                  {
-                    title: "Systematic Patterns",
-                    desc: "Cross-semantic usage that applies to multiple components or contexts",
-                    priority: "high",
-                  },
-                  {
-                    title: "Uncovered Requirements",
-                    desc: "Functional requirements not addressed by existing templates",
-                    priority: "high",
-                  },
-                  {
-                    title: "Accessibility Gaps",
-                    desc: "Accessibility needs that require new token relationships",
-                    priority: "critical",
-                  },
-                  {
-                    title: "System Conflicts",
-                    desc: "Situations where guidelines conflict with user needs",
-                    priority: "medium",
-                  },
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start gap-3 p-3 border rounded-lg"
-                  >
-                    <Badge
-                      variant={
-                        item.priority === "critical"
-                          ? "destructive"
-                          : item.priority === "high"
-                          ? "default"
-                          : "secondary"
-                      }
-                      className="mt-0.5 text-xs"
-                    >
-                      {item.priority}
-                    </Badge>
-                    <div className="flex-1">
-                      <div className="font-medium text-sm">{item.title}</div>
-                      <div className="text-xs text-gray-600 mt-1">
-                        {item.desc}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+        <h3 className="text-xl font-medium tracking-tight mb-4">
+          When to Escalate
+        </h3>
+        <Table className="mb-8">
+          <TableHeader>
+            <TableRow>
+              <TableHead>Item</TableHead>
+              <TableHead>Priority</TableHead>
+              <TableHead>Description</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell className="font-medium">Systematic Patterns</TableCell>
+              <TableCell>
+                <Badge variant="default" className="text-xs">
+                  high
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                Cross-semantic usage that applies to multiple components or
+                contexts
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell className="font-medium">
+                Uncovered Requirements
+              </TableCell>
+              <TableCell>
+                <Badge variant="default" className="text-xs">
+                  high
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                Functional requirements not addressed by existing templates
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell className="font-medium">Accessibility Gaps</TableCell>
+              <TableCell>
+                <Badge variant="destructive" className="text-xs">
+                  critical
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                Accessibility needs that require new token relationships
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell className="font-medium">System Conflicts</TableCell>
+              <TableCell>
+                <Badge variant="secondary" className="text-xs">
+                  medium
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                Situations where guidelines conflict with user needs
+              </TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
 
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <FileText className="w-5 h-5 text-blue-600" />
-                Required Documentation
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="border rounded-lg p-4">
-                  <h4 className="font-medium mb-3 flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-green-600" />
-                    Essential Information
-                  </h4>
-                  <div className="space-y-2">
-                    {[
-                      "Component family and specific context",
-                      "Functional requirement driving the need",
-                      "Proposed token usage with detailed justification",
-                      "Impact assessment on system consistency",
-                    ].map((item, index) => (
-                      <label
-                        key={index}
-                        className="flex items-start gap-2 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          className="mt-1 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                        />
-                        <span className="text-sm text-gray-700 group-hover:text-gray-900">
-                          {item}
-                        </span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="border rounded-lg p-4">
-                  <h4 className="font-medium mb-3 flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-green-600" />
-                    Supporting Evidence
-                  </h4>
-                  <div className="space-y-2">
-                    {[
-                      "User research findings",
-                      "Accessibility audit results",
-                      "Comparative analysis with similar patterns",
-                      "Implementation feasibility assessment",
-                    ].map((item, index) => (
-                      <label
-                        key={index}
-                        className="flex items-start gap-2 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          className="mt-1 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                        />
-                        <span className="text-sm text-gray-700 group-hover:text-gray-900">
-                          {item}
-                        </span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+        <h3 className="text-xl font-medium tracking-tight mb-4">
+          Required Documentation
+        </h3>
+        <Table className="mb-8">
+          <TableHeader>
+            <TableRow>
+              <TableHead>✓</TableHead>
+              <TableHead>Item</TableHead>
+              <TableHead>Type</TableHead>
+              <TableHead>Description</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell>
+                <input
+                  type="checkbox"
+                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+              </TableCell>
+              <TableCell className="font-medium">
+                Component family and specific context
+              </TableCell>
+              <TableCell>
+                <Badge variant="outline" className="text-xs">
+                  essential
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                Clearly identify the component type and usage context
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <input
+                  type="checkbox"
+                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+              </TableCell>
+              <TableCell className="font-medium">
+                Functional requirement driving the need
+              </TableCell>
+              <TableCell>
+                <Badge variant="outline" className="text-xs">
+                  essential
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                Document the specific functional need that requires
+                cross-semantic usage
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <input
+                  type="checkbox"
+                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+              </TableCell>
+              <TableCell className="font-medium">
+                Proposed token usage with detailed justification
+              </TableCell>
+              <TableCell>
+                <Badge variant="outline" className="text-xs">
+                  essential
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                Specify which tokens will be used and why they're appropriate
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <input
+                  type="checkbox"
+                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+              </TableCell>
+              <TableCell className="font-medium">
+                Impact assessment on system consistency
+              </TableCell>
+              <TableCell>
+                <Badge variant="outline" className="text-xs">
+                  essential
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                Evaluate how the change affects overall system coherence
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <input
+                  type="checkbox"
+                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+              </TableCell>
+              <TableCell className="font-medium">
+                User research findings
+              </TableCell>
+              <TableCell>
+                <Badge variant="outline" className="text-xs">
+                  supporting
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                Evidence from user testing or research that supports the need
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <input
+                  type="checkbox"
+                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+              </TableCell>
+              <TableCell className="font-medium">
+                Accessibility audit results
+              </TableCell>
+              <TableCell>
+                <Badge variant="outline" className="text-xs">
+                  supporting
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                Results from accessibility testing that justify the approach
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <input
+                  type="checkbox"
+                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+              </TableCell>
+              <TableCell className="font-medium">
+                Comparative analysis with similar patterns
+              </TableCell>
+              <TableCell>
+                <Badge variant="outline" className="text-xs">
+                  supporting
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                How similar components or patterns handle comparable
+                requirements
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <input
+                  type="checkbox"
+                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+              </TableCell>
+              <TableCell className="font-medium">
+                Implementation feasibility assessment
+              </TableCell>
+              <TableCell>
+                <Badge variant="outline" className="text-xs">
+                  supporting
+                </Badge>
+              </TableCell>
+              <TableCell className="text-sm text-gray-600">
+                Technical evaluation of the proposed implementation approach
+              </TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
 
         <Callout type="warning" title="Escalation Timeline">
           Escalations should be resolved within 2-3 business days. Critical
