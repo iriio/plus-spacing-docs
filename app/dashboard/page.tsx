@@ -65,15 +65,20 @@ export default function Page() {
           color in a different way than usual, because you have a special reason
           (like making something easier to use).
         </p>
-        <Callout type="info" className="mb-0">
-          <strong>In short:</strong> <br />
-          <span className="block mt-1">
-            Semantic = use the size or color as the system says.
-          </span>
-          <span>
-            Cross-semantic = use a different size or color for a good reason.
-          </span>
-        </Callout>
+        <Card className="mb-0">
+          <CardContent className="pt-6">
+            <div className="text-base">
+              <strong>In short:</strong>
+              <div className="mt-2 space-y-1">
+                <div>Semantic = use the size or color as the system says.</div>
+                <div>
+                  Cross-semantic = use a different size or color for a good
+                  reason.
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       </section>
 
       <section id="hierarchy" className="mt-16">
@@ -155,6 +160,51 @@ export default function Page() {
                 </TableRow>
               </TableBody>
             </Table>
+
+            <div className="bg-gray-50 p-6 rounded-lg mt-6">
+              <h4 className="font-medium mb-4">
+                Component Spacing Visualization
+              </h4>
+              <div className="flex justify-center">
+                <div className="w-64 bg-white border-2 border-dashed border-gray-300 p-4 rounded-lg shadow-sm">
+                  <div className="text-xs text-gray-600 mb-3 text-center">
+                    Component Container
+                  </div>
+                  <div className="relative bg-blue-50 border border-blue-200 rounded p-3">
+                    {/* Padding indicators */}
+                    <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 text-xs text-gray-500 bg-yellow-100 px-1 py-0.5 rounded">
+                      padding
+                    </div>
+                    <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-8 text-xs text-gray-500 bg-green-100 px-1 py-0.5 rounded">
+                      padding
+                    </div>
+
+                    <div className="space-y-2">
+                      <div className="bg-white border border-gray-200 p-2 rounded text-xs text-center">
+                        Element 1
+                      </div>
+                      <div className="text-xs text-gray-500 text-center">
+                        ↕ gap spacing
+                      </div>
+                      <div className="bg-white border border-gray-200 p-2 rounded text-xs text-center">
+                        Element 2
+                      </div>
+                      <div className="text-xs text-gray-500 text-center">
+                        ↔ inline spacing
+                      </div>
+                      <div className="flex gap-2">
+                        <div className="bg-white border border-gray-200 p-2 rounded text-xs text-center flex-1">
+                          Button 1
+                        </div>
+                        <div className="bg-white border border-gray-200 p-2 rounded text-xs text-center flex-1">
+                          Button 2
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="pl-4">
@@ -497,12 +547,6 @@ export default function Page() {
             </TableRow>
           </TableBody>
         </Table>
-
-        <Callout type="warning" title="Escalation Timeline">
-          Escalations should be resolved within 2-3 business days. Critical
-          accessibility issues take priority and may require immediate attention
-          from the design system team.
-        </Callout>
       </section>
     </PageLayout>
   );
