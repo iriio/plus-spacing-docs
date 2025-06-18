@@ -9,6 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import Image from "next/image";
+import { getImagePath } from "@/lib/utils";
 
 export default function Page() {
   return (
@@ -32,7 +33,7 @@ export default function Page() {
         </div>
         <div className="mb-8">
           <Image
-            src="/BUTTON.png"
+            src={getImagePath("/BUTTON.png")}
             alt="Button Family Example"
             width={1000}
             height={400}
@@ -173,7 +174,7 @@ export default function Page() {
         </div>
         <div className="mb-8">
           <Image
-            src="/BADGE.png"
+            src={getImagePath("/badge.png")}
             alt="Badge & Chip Family Example"
             width={1000}
             height={400}
@@ -242,7 +243,7 @@ export default function Page() {
         </div>
         <div className="mb-8">
           <Image
-            src="/fields.png"
+            src={getImagePath("/fields.png")}
             alt="Form Elements Family Example"
             width={1000}
             height={400}
@@ -311,7 +312,7 @@ export default function Page() {
         </div>
         <div className="mb-8">
           <Image
-            src="/modal.png"
+            src={getImagePath("/modal.png")}
             alt="Modal Family Example"
             width={1000}
             height={400}
@@ -406,7 +407,7 @@ export default function Page() {
         </div>
         <div className="mb-8 bg-slate-100">
           <Image
-            src="/tabs.png"
+            src={getImagePath("/tabs.png")}
             alt="Navigation Family Example"
             width={1000}
             height={400}
@@ -473,7 +474,7 @@ export default function Page() {
         </div>
         <div className="mb-8">
           <Image
-            src="/alert.png"
+            src={getImagePath("/alert.png")}
             alt="Alert & Notification Family Example"
             width={1000}
             height={400}

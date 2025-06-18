@@ -1,6 +1,11 @@
+"use client";
+
 import type * as React from "react";
+import { useState, useEffect } from "react";
 import { Minus, Plus } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { getImagePath } from "@/lib/utils";
 
 import { SearchForm } from "@/components/search-form";
 import {
@@ -84,16 +89,67 @@ const data = {
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  // State to track which sections are open
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Load saved state from localStorage on mount
+  useEffect(() => {
+    const savedState = localStorage.getItem("sidebar-state");
+    if (savedState) {
+      try {
+        setOpenSections(JSON.parse(savedState));
+      } catch (error) {
+        console.error("Failed to parse saved sidebar state:", error);
+        // Default to all sections open
+        const defaultState = data.navMain.reduce(
+          (acc, item) => ({
+            ...acc,
+            [item.title]: true,
+          }),
+          {}
+        );
+        setOpenSections(defaultState);
+      }
+    } else {
+      // Default to all sections open
+      const defaultState = data.navMain.reduce(
+        (acc, item) => ({
+          ...acc,
+          [item.title]: true,
+        }),
+        {}
+      );
+      setOpenSections(defaultState);
+    }
+    setIsLoaded(true);
+  }, []);
+
+  // Save state to localStorage whenever it changes
+  useEffect(() => {
+    if (isLoaded) {
+      localStorage.setItem("sidebar-state", JSON.stringify(openSections));
+    }
+  }, [openSections, isLoaded]);
+
+  // Handle section toggle
+  const handleSectionToggle = (sectionTitle: string, isOpen: boolean) => {
+    setOpenSections((prev) => ({
+      ...prev,
+      [sectionTitle]: isOpen,
+    }));
+  };
+
   return (
     <Sidebar {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <a href="/dashboard">
+              <Link href="/dashboard">
                 <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                   <Image
-                    src="/Personalized Learning Logo.jpeg"
+                    src={getImagePath("/Personalized Learning Logo.jpeg")}
                     alt="Design Tokens Logo"
                     width={32}
                     height={16}
@@ -106,7 +162,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <div className="flex flex-col gap-0.5 leading-none">
                   <span className="font-semibold">Design Tokens</span>
                 </div>
-              </a>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
@@ -115,10 +171,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarContent>
         <SidebarGroup>
           <SidebarMenu>
-            {data.navMain.map((item, index) => (
+            {data.navMain.map((item) => (
               <Collapsible
                 key={item.title}
-                defaultOpen={index === 0} // Open "Getting Started" by default
+                open={openSections[item.title] ?? true}
+                onOpenChange={(isOpen) =>
+                  handleSectionToggle(item.title, isOpen)
+                }
                 className="group/collapsible"
               >
                 <SidebarMenuItem>
@@ -135,7 +194,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                         {item.items.map((item) => (
                           <SidebarMenuSubItem key={item.title}>
                             <SidebarMenuSubButton asChild>
-                              <a href={item.url}>{item.title}</a>
+                              <Link href={item.url}>{item.title}</Link>
                             </SidebarMenuSubButton>
                           </SidebarMenuSubItem>
                         ))}
