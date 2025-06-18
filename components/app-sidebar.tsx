@@ -32,9 +32,13 @@ const data = {
     {
       title: "Getting Started",
       items: [
-        { title: "Token Selection Hierarchy", url: "/dashboard#hierarchy" },
+        { title: "Definitions", url: "/dashboard#definitions" },
         {
-          title: "Cross-Semantic",
+          title: "Hierarchy",
+          url: "/dashboard#hierarchy",
+        },
+        {
+          title: "When to Use",
           url: "/dashboard#authorization",
         },
         {
