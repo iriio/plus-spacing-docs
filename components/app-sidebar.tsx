@@ -6,6 +6,7 @@ import { Minus, Plus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { getImagePath, getLinkPath } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 import { SearchForm } from "@/components/search-form";
 import {
@@ -98,6 +99,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   // State to track which sections are open
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
   const [isLoaded, setIsLoaded] = useState(false);
+  const router = useRouter();
 
   // Load saved state from localStorage on mount
   useEffect(() => {
@@ -144,6 +146,22 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       ...prev,
       [sectionTitle]: isOpen,
     }));
+  };
+
+  // Handle navigation with smooth scrolling
+  const handleNavigation = (url: string) => {
+    const [basePath, hash] = url.split("#");
+
+    if (hash && window.location.pathname === basePath) {
+      // Same page, just scroll to section
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Different page or no hash, use normal navigation
+      router.push(getLinkPath(url));
+    }
   };
 
   return (
@@ -202,9 +220,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                         {item.items.map((item) => (
                           <SidebarMenuSubItem key={item.title}>
                             <SidebarMenuSubButton asChild>
-                              <Link href={getLinkPath(item.url)}>
+                              <a
+                                href={getLinkPath(item.url)}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  handleNavigation(item.url);
+                                }}
+                              >
                                 {item.title}
-                              </Link>
+                              </a>
                             </SidebarMenuSubButton>
                           </SidebarMenuSubItem>
                         ))}
