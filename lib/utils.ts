@@ -9,23 +9,16 @@ export function cn(...inputs: ClassValue[]) {
 export function getImagePath(imagePath: string): string {
   // Remove leading slash if present
   const cleanPath = imagePath.startsWith("/") ? imagePath.slice(1) : imagePath;
-
-  // In production (GitHub Pages), add the base path
-  if (process.env.NODE_ENV === "production") {
-    return `/plus-spacing-docs/${cleanPath}`;
-  }
-
-  // In development, use the path as-is
-  return `/${cleanPath}`;
+  return `${BASE_PATH}/${cleanPath}`;
 }
 
-// Utility function to handle link paths with base path for GitHub Pages
-export function getLinkPath(linkPath: string): string {
-  // In production (GitHub Pages), add the base path
-  if (process.env.NODE_ENV === "production") {
-    return `/plus-spacing-docs${linkPath}`;
-  }
+// Base path for GitHub Pages deployment
+const BASE_PATH =
+  process.env.NODE_ENV === "production" ? "/plus-spacing-docs" : "";
 
-  // In development, use the path as-is
+// Utility function to handle link paths - Next.js handles basePath automatically for Link components
+export function getLinkPath(linkPath: string): string {
+  // Next.js automatically applies basePath for Link components in static exports
+  // So we just return the path as-is
   return linkPath;
 }
