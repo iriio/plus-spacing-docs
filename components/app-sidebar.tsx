@@ -153,10 +153,16 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     const [basePath, hash] = url.split("#");
 
     if (hash && window.location.pathname === basePath) {
-      // Same page, just scroll to section
+      // Same page, just scroll to section with offset for sticky header
       const element = document.getElementById(hash);
       if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+        const headerHeight = 80; // Account for sticky header (h-16 = 64px + some padding)
+        const elementPosition = element.offsetTop - headerHeight;
+
+        window.scrollTo({
+          top: elementPosition,
+          behavior: "smooth",
+        });
       }
     } else {
       // Different page or no hash, use normal navigation

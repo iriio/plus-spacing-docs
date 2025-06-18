@@ -17,11 +17,6 @@ export default function Page() {
       breadcrumbs={[{ label: "Component Templates" }]}
       title="Component Family Templates"
     >
-      <p className="text-base text-gray-600 mb-8 leading-relaxed">
-        Ready-made spacing patterns for common components. We've already figured
-        out the tricky parts, so you don't have to.
-      </p>
-
       <section id="button-family" className="mt-12">
         <div className="mb-6">
           <h2 className="text-2xl font-medium tracking-tight mb-2">
@@ -166,7 +161,6 @@ export default function Page() {
           <h2 className="text-2xl font-medium tracking-tight mb-2">
             Badge & Chip Family
           </h2>
-          <p className="text-sm text-gray-600">Small - Limited Authorization</p>
         </div>
         <div className="mb-8">
           <Image

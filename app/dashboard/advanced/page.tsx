@@ -15,15 +15,7 @@ import { AlertTriangle, FileText, CheckCircle2 } from "lucide-react";
 
 export default function Page() {
   return (
-    <PageLayout
-      breadcrumbs={[{ label: "Advanced" }]}
-      title="Advanced Scenarios"
-    >
-      <p className="text-base text-gray-600 mb-8 leading-relaxed">
-        Tricky situations and special cases where you might need to bend the
-        rules a bit.
-      </p>
-
+    <PageLayout breadcrumbs={[{ label: "Page Layout" }]} title="Page Layout">
       <section id="responsive" className="mt-12">
         <h2 className="text-2xl font-medium tracking-tight mb-6">
           Using Large Tokens for Page Layout
