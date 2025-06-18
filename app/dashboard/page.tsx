@@ -35,8 +35,9 @@ export default function Page() {
             </CardHeader>
             <CardContent>
               <div className="text-sm">
-                <strong>Badge:</strong> Uses <code>space-small</code> for
-                padding. Badges are small, so they use small space.
+                <span className="font-semibold">Badge:</span> Uses{" "}
+                <code>space-small</code> for padding. Badges are small, so they
+                use small space.
               </div>
             </CardContent>
           </Card>
@@ -48,27 +49,28 @@ export default function Page() {
             </CardHeader>
             <CardContent>
               <div className="text-sm">
-                <strong>Button:</strong> Is usually small, but uses{" "}
-                <code>space-200</code> (medium space) for padding. This makes it
-                easier to tap, even though it is bigger than normal for a small
-                button.
+                <span className="font-semibold">Button:</span> Is usually small,
+                but uses <code>space-200</code> (medium space) for padding. This
+                makes it easier to tap, even though it is bigger than normal for
+                a small button.
               </div>
             </CardContent>
           </Card>
         </div>
         <p className="text-base leading-relaxed mb-4">
-          <strong>Semantic tokens</strong> are the sizes or colors you are
-          supposed to use for each part, like the right padding for a badge.
+          <span className="font-semibold">Semantic tokens</span> are the sizes
+          or colors you are supposed to use for each part, like the right
+          padding for a badge.
         </p>
         <p className="text-base leading-relaxed mb-4">
-          <strong>Cross-semantic token usage</strong> means using a size or
-          color in a different way than usual, because you have a special reason
-          (like making something easier to use).
+          <span className="font-semibold">Cross-semantic token usage</span>{" "}
+          means using a size or color in a different way than usual, because you
+          have a special reason (like making something easier to use).
         </p>
         <Card className="mb-0">
           <CardContent className="pt-6">
             <div className="text-base">
-              <strong>In short:</strong>
+              <span className="font-semibold">In short:</span>
               <div className="mt-2 space-y-1">
                 <div>Semantic = use the size or color as the system says.</div>
                 <div>
