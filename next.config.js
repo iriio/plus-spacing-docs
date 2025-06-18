@@ -5,7 +5,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/plus-spacing-token-docs",
+  basePath: "/plus-spacing-docs",
 };
 
 module.exports = nextConfig;
