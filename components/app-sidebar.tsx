@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { Minus, Plus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { getImagePath } from "@/lib/utils";
+import { getImagePath, getLinkPath } from "@/lib/utils";
 
 import { SearchForm } from "@/components/search-form";
 import {
@@ -146,7 +146,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <Link href="/dashboard">
+              <Link href={getLinkPath("/dashboard")}>
                 <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                   <Image
                     src={getImagePath("/Personalized Learning Logo.jpeg")}
@@ -194,7 +194,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                         {item.items.map((item) => (
                           <SidebarMenuSubItem key={item.title}>
                             <SidebarMenuSubButton asChild>
-                              <Link href={item.url}>{item.title}</Link>
+                              <Link href={getLinkPath(item.url)}>
+                                {item.title}
+                              </Link>
                             </SidebarMenuSubButton>
                           </SidebarMenuSubItem>
                         ))}

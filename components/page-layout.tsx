@@ -19,6 +19,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { SearchProvider } from "@/contexts/search-context";
+import { getLinkPath } from "@/lib/utils";
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -99,7 +100,7 @@ export function PageLayout({ children, breadcrumbs, title }: PageLayoutProps) {
                     )}
                     <BreadcrumbItem className="hidden md:block">
                       {crumb.href ? (
-                        <BreadcrumbLink href={crumb.href}>
+                        <BreadcrumbLink href={getLinkPath(crumb.href)}>
                           {crumb.label}
                         </BreadcrumbLink>
                       ) : (
